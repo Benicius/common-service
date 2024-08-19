@@ -1,6 +1,7 @@
 package com.bdsystems.airport.common_service.services;
 
 import com.bdsystems.airport.common_service.domains.TransportOrder;
+import com.bdsystems.airport.common_service.domains.TransportOrderVO;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,7 +14,8 @@ public class TransportOrderServiceImpl implements TransportOrderService {
 	}
 
 	@Override
-	public TransportOrder create(TransportOrder order) {
-		return transportOrderRepository.save(order);
+	public TransportOrder create(TransportOrderVO order) {
+		TransportOrder transportOrder = order.convertToEntity();
+		return transportOrderRepository.save(transportOrder);
 	}
 }

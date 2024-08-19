@@ -1,7 +1,8 @@
 package com.bdsystems.airport.common_service.services;
 
 import com.bdsystems.airport.common_service.domains.TransportOrder;
+import com.bdsystems.airport.common_service.domains.TransportOrderVO;
 
 public interface TransportOrderService {
-	TransportOrder create(TransportOrder order);
+	TransportOrder create(TransportOrderVO order);
 }

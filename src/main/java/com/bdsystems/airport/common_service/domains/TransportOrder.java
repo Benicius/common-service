@@ -1,14 +1,18 @@
 package com.bdsystems.airport.common_service.domains;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class TransportOrder {
 
 	@Id
@@ -19,5 +23,6 @@ public class TransportOrder {
 	private String flightType;
 	private LocalDateTime createAt;
 	private LocalDateTime updatedAt;
+	@Enumerated(EnumType.STRING)
 	private StatusEnum status;
 }

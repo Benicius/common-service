@@ -11,7 +11,10 @@ public record TransportOrderVO(
 				String flightType,
 				LocalDateTime createAt,
 				LocalDateTime updatedAt,
-				String status
+				String status,
+				String sourceLocation,
+				String nextLocation,
+				String targetLocation
 ) {
 
 	public TransportOrder convertToEntity(){
@@ -22,6 +25,9 @@ public record TransportOrderVO(
 						.status(StatusEnum.valueOf(this.status))
 						.createAt(this.createAt)
 						.updatedAt(this.updatedAt)
+						.sourceLocation(this.sourceLocation)
+						.nextLocation(this.nextLocation)
+						.targetLocation(this.targetLocation)
 						.build();
 	}
 }

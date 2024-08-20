@@ -25,4 +25,7 @@ public class TransportOrder {
 	private LocalDateTime updatedAt;
 	@Enumerated(EnumType.STRING)
 	private StatusEnum status;
+	private String sourceLocation;
+	private String nextLocation;
+	private String targetLocation;
 }
